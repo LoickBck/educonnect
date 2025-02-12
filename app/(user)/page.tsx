@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero' // Importation du composant Hero pour l'affichage de la section d'accueil
 import { CourseCard } from '@/components/CourseCard' // Importation du composant CourseCard pour afficher les cours
-import { getCourses } from '@/sanity/lib/courses/getCourses' // Importation de la fonction pour récupérer la liste des cours depuis Sanity
+import { getCourses } from '@/sanity/lib/courses/getCourses'
+import Link from 'next/link' // Importation de la fonction pour récupérer la liste des cours depuis Sanity
 
 export const dynamic = 'force-static' // Forcer le rendu statique de la page (Next.js)
 export const revalidate = 3600 // Régénérer la page au maximum toutes les heures (3600 secondes)
@@ -36,6 +37,9 @@ export default async function Home() {
                     ))}
                 </div>
             </div>
+            <p className="text-14-regular justify-items-end text-center text-dark-600 xl:text-left py-12 xl:ml-10">
+                ©2025 <Link href="https://buckloick.com/">Loick Buck</Link>
+            </p>
         </div>
     )
 }
