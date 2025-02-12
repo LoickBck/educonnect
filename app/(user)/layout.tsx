@@ -14,12 +14,12 @@ export const metadata: Metadata = {
         title: 'EduConnect - Votre plateforme de formation en ligne', // Titre pour Open Graph
         description:
             'Découvrez EduConnect, une solution complète offrant un large choix de cours gratuits et payants pour tous niveaux. Apprenez, partagez et progressez dans votre domaine.', // Description pour Open Graph
-        url: 'https://educonnect.vercel.app', // URL du site
+        url: 'https://educonnect-rho.vercel.app/', // URL du site
         siteName: 'EduConnect', // Nom du site
         images: [
             // Images à utiliser lors du partage
             {
-                url: 'https://educonnect.vercel.app/images/logo.png', // URL de l'image
+                url: 'https://educonnect-rho.vercel.app/images/logo.png', // URL de l'image
                 width: 100, // Largeur de l'image
                 height: 100, // Hauteur de l'image
                 alt: 'EduConnect - Logo', // Texte alternatif de l'image
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         description:
             'EduConnect est une plateforme innovante proposant des cours gratuits et payants. Apprenez à votre rythme avec des contenus de qualité élaborés par des experts.', // Description pour Twitter
         site: '@educonnect', // Compte Twitter associé au site
-        images: ['https://educonnect.vercel.app/images/logo.png'], // Images à utiliser pour Twitter
+        images: ['https://educonnect-rho.vercel.app/images/logo.png'], // Images à utiliser pour Twitter
     },
     icons: {
         // Définition des icônes du site
