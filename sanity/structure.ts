@@ -1,32 +1,38 @@
 import { StructureBuilder } from 'sanity/structure'
+// Ce module configure la structure du Sanity Studio en utilisant le builder de structure
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
 export const structure = (S: StructureBuilder) =>
+    // Crée une liste principale pour le tableau de bord d'administration
     S.list()
         .title('Dashboard Admin')
         .items([
-            // Course Content
+            // SECTION : Contenu du cours
             S.listItem()
                 .title('Contenu du cours')
                 .child(
+                    // Liste des cours (documents de type "course")
                     S.documentTypeList('course')
                         .title('Cours')
                         .child((courseId) =>
+                            // Pour un cours donné, on affiche un sous-menu avec différentes options
                             S.list()
                                 .title('Options du cours')
                                 .items([
-                                    // Option to edit course content
+                                    // Option : Modifier le contenu du cours
                                     S.listItem()
                                         .title('Modifier le contenu du cours')
                                         .child(
+                                            // Permet d'éditer le document du cours
                                             S.document()
                                                 .schemaType('course')
                                                 .documentId(courseId)
                                         ),
-                                    // Option to view course enrollments
+                                    // Option : Voir les inscriptions au cours
                                     S.listItem()
                                         .title('Voir les étudiants')
                                         .child(
+                                            // Affiche la liste des inscriptions filtrées pour le cours donné
                                             S.documentList()
                                                 .title('Inscriptions aux cours')
                                                 .filter(
@@ -38,20 +44,23 @@ export const structure = (S: StructureBuilder) =>
                         )
                 ),
 
+            // Séparateur visuel
             S.divider(),
 
-            // Users
+            // SECTION : Gestion des utilisateurs
             S.listItem()
                 .title('Gestion des utilisateurs')
                 .child(
+                    // Permet de choisir le type d'utilisateur à gérer
                     S.list()
                         .title("Sélectionner un type d'utilisateur")
                         .items([
-                            // Instructors with options
+                            // Sous-section pour les formateurs
                             S.listItem()
                                 .title('Formateurs')
                                 .schemaType('instructor')
                                 .child(
+                                    // Liste des documents "instructor" avec un sous-menu d'options pour chaque formateur
                                     S.documentTypeList('instructor')
                                         .title('Formateurs')
                                         .child((instructorId) =>
@@ -60,7 +69,7 @@ export const structure = (S: StructureBuilder) =>
                                                     'Options pour le formateur'
                                                 )
                                                 .items([
-                                                    // Option to edit instructor details
+                                                    // Option : Modifier les détails du formateur
                                                     S.listItem()
                                                         .title(
                                                             'Modifier les détails du formateur'
@@ -74,7 +83,7 @@ export const structure = (S: StructureBuilder) =>
                                                                     instructorId
                                                                 )
                                                         ),
-                                                    // Option to view instructor's courses
+                                                    // Option : Voir les cours du formateur
                                                     S.listItem()
                                                         .title('Voir les cours')
                                                         .child(
@@ -92,7 +101,7 @@ export const structure = (S: StructureBuilder) =>
                                                 ])
                                         )
                                 ),
-                            // Students with options
+                            // Sous-section pour les étudiants
                             S.listItem()
                                 .title('Les étudiants')
                                 .schemaType('student')
@@ -103,7 +112,7 @@ export const structure = (S: StructureBuilder) =>
                                             S.list()
                                                 .title('Options des étudiants')
                                                 .items([
-                                                    // Option to edit student details
+                                                    // Option : Modifier les détails de l'étudiant
                                                     S.listItem()
                                                         .title(
                                                             "Modifier les détails de l'étudiant"
@@ -117,7 +126,7 @@ export const structure = (S: StructureBuilder) =>
                                                                     studentId
                                                                 )
                                                         ),
-                                                    // Option to view enrollments
+                                                    // Option : Voir les inscriptions de l'étudiant
                                                     S.listItem()
                                                         .title(
                                                             'Voir les inscriptions'
@@ -134,7 +143,7 @@ export const structure = (S: StructureBuilder) =>
                                                                     studentId,
                                                                 })
                                                         ),
-                                                    // Option to view completed lessons
+                                                    // Option : Voir les leçons terminées par l'étudiant
                                                     S.listItem()
                                                         .title(
                                                             'Voir les leçons terminées'
@@ -169,12 +178,14 @@ export const structure = (S: StructureBuilder) =>
                         ])
                 ),
 
+            // Séparateur visuel
             S.divider(),
 
-            // System Management
+            // SECTION : Gestion du système
             S.listItem()
                 .title('Gestion du système')
                 .child(
+                    // Liste de documents pour la gestion du système, ici uniquement les catégories
                     S.list()
                         .title('Gestion du système')
                         .items([

@@ -1,19 +1,20 @@
 /**
- * This route is responsible for the built-in authoring environment using Sanity Studio.
- * All routes under your studio path is handled by this file using Next.js' catch-all routes:
+ * Cette route est responsable de l'environnement d'édition intégré utilisant Sanity Studio.
+ * Toutes les routes sous votre chemin "studio" sont gérées par ce fichier grâce aux routes catch-all de Next.js :
  * https://nextjs.org/docs/routing/dynamic-routes#catch-all-routes
  *
- * You can learn more about the next-sanity package here:
+ * Vous pouvez en savoir plus sur le package next-sanity ici :
  * https://github.com/sanity-io/next-sanity
  */
 
-import { NextStudio } from 'next-sanity/studio'
-import config from '../../../sanity.config'
+import { NextStudio } from 'next-sanity/studio' // Importation du composant NextStudio pour intégrer Sanity Studio dans Next.js
+import config from '../../../../sanity.config' // Importation de la configuration de Sanity à partir du fichier de configuration
 
-export const dynamic = 'force-static'
+export const dynamic = 'force-static' // Force le rendu statique de cette page pour de meilleures performances
 
-export { metadata, viewport } from 'next-sanity/studio'
+export { metadata, viewport } from 'next-sanity/studio' // Réexporte les métadonnées et la configuration du viewport depuis next-sanity/studio
 
 export default function StudioPage() {
-  return <NextStudio config={config} />
+    // Composant principal de la page Studio qui retourne le composant NextStudio avec la configuration passée en prop
+    return <NextStudio config={config} />
 }
