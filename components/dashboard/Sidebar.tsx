@@ -99,7 +99,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
                         <ArrowLeft className="h-4 w-4" />
                         <div className="flex items-center gap-x-2">
                             <Library className="h-4 w-4" />
-                            <span>Course Library</span>
+                            <span>Retour aux cours</span>
                         </div>
                     </Link>
                     {/* Boutons de contrôle : bascule du mode sombre et fermeture de la sidebar sur mobile */}
@@ -162,7 +162,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
                                             </p>
                                             <p className="text-xs text-muted-foreground">
                                                 {module.lessons?.length || 0}{' '}
-                                                lessons
+                                                leçons
                                             </p>
                                         </div>
                                     </div>
@@ -264,7 +264,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
                             </Link>
                         </TooltipTrigger>
                         <TooltipContent side="right">
-                            <p>Bibliothèque des cours</p>
+                            <p>Retour aux cours</p>
                         </TooltipContent>
                     </Tooltip>
 
