@@ -69,4 +69,9 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  @media (min-width: 200px) {
+    .cours-tel {
+      height: 100vh;
+    }
+  }
 }

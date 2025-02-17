@@ -25,7 +25,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
     if (!course) {
         return (
-            <div className="container mx-auto px-4 py-8 mt-16">
+            <div className="container mx-auto px-4 py-8 pt-24">
                 <h1 className="text-4xl font-bold">Cours non trouvé</h1>
             </div>
         )
@@ -34,7 +34,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
     return (
         <div className="min-h-screen bg-background">
             {/* Hero Section */}
-            <div className="relative h-[60vh] w-full">
+            <div className="relative cours-tel md:h-[80vh] lg:h-[60vh] w-full">
                 {course.image && (
                     <Image
                         src={urlFor(course.image).url() || ''}
