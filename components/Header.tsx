@@ -37,7 +37,7 @@ export default function Header() {
                                 className="h-6 w-6 text-primary"
                             />
                             {/* Nom de l'application avec un dégradé sur le texte */}
-                            <span className="text-xl font-bold bg-gradient-to-r from-primary/90 to-primary bg-clip-text text-transparent">
+                            <span className="nom-logo text-xl font-bold bg-gradient-to-r from-primary/90 to-primary bg-clip-text text-transparent">
                                 EduConnect
                             </span>
                         </Link>

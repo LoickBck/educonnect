@@ -74,4 +74,9 @@ body {
       height: 100vh;
     }
   }
+  @media (max-width: 400px) {
+    .nom-logo {
+      display: none;
+    }
+  }
 }
